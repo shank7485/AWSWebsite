@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+<span style="display:block; height: 100px;"></span>
+
+{% if success %}
+<div class="container">
+	<div class="jumbotron">
+		<div class="text-center">
+			<customFont>
+				<h2>Thank you for contacting. I will get back to you ASAP.</h2>
+			</customFont>
+		</div>
+	</div>
+</div>
+
+{% else %}
+
+<div class="container">
+	<div class="jumbotron">
+		<div class="text-center">
+			<classyFontBody>
+				<h2>Contact</h2>
+			</classyFontBody>
+		</div>
+		
+		<div align="center">
+		<p> <classyFontIndex> You can send me an email directly at <A HREF="mailto:shank4804@gmail.com" style="color: black" target="_blank"><b><u>shank4804@gmail.com</u></b></A> </classyFontIndex> </p>
+				<p> <classyFontIndex>Or, submit the form below to contact me. </classyFontIndex> </p>
+
+				<form action="{{ url_for('contact') }}" method=post>
+					
+				{{ form.name.label }}
+				{{ form.name }}
+			 
+				{{ form.email.label }}
+				{{ form.email }}
+			 				
+				{{ form.message.label }}
+				{{ form.message }}
+				
+				
+				<span style="display:block; height: 30px;"></span>
+				
+				{{ form.submit }}
+				
+				</form>
+		
+		<span style="display:block; height: 30px;"></span>
+		
+		<classyFontBody>
+			You can also contact me on LinkedIn or can view my code on GitHub by clicking on them below.
+		</classyFontBody>
+		
+		</div>
+		
+		<span style="display:block; height: 75px;"></span>
+		
+		<a href="https://www.linkedin.com/in/shank7485" target="_blank">
+			<div id="linkedin" style="float:left;"></div>
+		</a>
+					
+		<a href="http://www.github.com/shank7485" target="_blank">
+			<div id="github" style="float:right;"></div>
+		</a>
+		
+		<!-- <img src="/static/arrows.png" Hspace="60" Vspace="20"> -->
+				
+<span style="display:block; height: 100px;"></span>
+	</div>
+</div>
+
+{% endif %}
+{% endblock %}
