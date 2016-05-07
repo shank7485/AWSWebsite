@@ -2,7 +2,7 @@ from myapp import app
 from flask import render_template, request, redirect
 from wtforms import Form, TextField, TextAreaField, SubmitField
 from flask_mail import Message, Mail
-
+from flask_flatpages import FlatPages
 
 class ContactForm(Form):
     name = TextField("Name")
@@ -22,6 +22,14 @@ app.config["MAIL_PASSWORD"] = 'Bng2012#'
 
 mail.init_app(app)
 
+DEBUG = True
+FLATPAGES_AUTO_RELOAD = DEBUG
+FLATPAGES_EXTENSION = '.md'
+FLATPAGES_ROOT ='content'
+POST_DIR = 'posts'
+
+flatpages = FlatPages(app)
+app.config.from_object(__name__)
 
 @app.route('/')
 @app.route('/index')
@@ -81,9 +89,21 @@ def projects_queue():
 def projects_view():
 	return render_template('projects_view.html')
 
-@app.route('/blog')
-def blog():
-	return redirect("http://shank7485.tumblr.com/",code=302)
+@app.route('/posts/')
+def posts():
+    posts = [p for p in flatpages if p.path.startswith(POST_DIR)]
+    posts.sort(key=lambda item:item['date'], reverse=True)
+    return render_template('posts.html', posts = posts)
+
+@app.route("/posts/<name>/")
+def post(name):
+    path = '{}/{}'.format(POST_DIR, name)
+    post = flatpages.get_or_404(path)
+    return render_template('post.html', post=post)
+
+@app.route('/hobby')
+def hobby():
+	return render_template('hobby.html')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
