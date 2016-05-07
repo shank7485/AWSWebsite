@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <classyFontPost>
+            <div align="center">
+                <h2><b> {{ post.title }} </b></h2>
+            </div>
+            {{ post.html|safe }}
+            <div align="center">
+                <a href="/posts" style="color: black">
+                    <b>← Back to posts</b>
+                </a>
+            </div>
+        </classyFontPost>
+    </div>
+</div>
+
+{% endblock %}

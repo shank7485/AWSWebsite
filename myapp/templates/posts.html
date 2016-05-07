@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="text-center">
+					<classyFontBody>
+					<h2>Blog Posts</h2>
+					</classyFontBody>
+        </div>
+
+					<span style="display:block; height: 15px;"></span>
+        <div align="center">
+            <classyFontBody>
+                <p>I write blog posts about tech and photography whenever I am free. Check out my posts below.</p>
+            </classyFontBody>
+        </div>
+        <div align="center">
+            <classyFontPost>
+
+						{% for post in posts %}
+                            <b>
+                                <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}" style="color: black">
+                                    {{ post.title }}
+                                </a>
+                            </b>
+                            <br>
+                            {{ post.details }}
+                            <br>
+                            <small> Posted date: {{ post.date }}</small>
+                            <br>
+                            <p></p>
+
+                        {% endfor %}
+
+            <div align="center">
+                <a href="/posts" style="color: black">
+                    <b> Next → </b>
+                </a>
+            </div>
+            </classyFontPost></div>
+        </div>
+</div>
+
+{% endblock %}

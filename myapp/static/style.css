@@ -54,6 +54,11 @@ classyFontIndex{
 	font-size: 23px;
 }
 
+classyFontPost{
+	font-family: ClassyFont;
+	font-size: 18px;
+}
+
 #content img{
 	float: left;
 }
