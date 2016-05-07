@@ -27,7 +27,10 @@ DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT ='content'
-POST_DIR = 'posts'
+POST_DIR1 = 'posts1'
+POST_DIR2 = 'posts2'
+POST_DIR3 = 'posts3'
+# add more Directories here.
 
 flatpages = FlatPages(app)
 app.config.from_object(__name__)
@@ -90,17 +93,44 @@ def projects_queue():
 def projects_view():
 	return render_template('projects_view.html')
 
-@app.route('/posts/')
-def posts():
-    posts = [p for p in flatpages if p.path.startswith(POST_DIR)]
-    posts.sort(key=lambda item:item['date'], reverse=True)
-    return render_template('posts.html', posts = posts)
+#Add posts* here for more blogs.
+@app.route('/posts1/')
+def posts1():
+    posts1 = [p for p in flatpages if p.path.startswith(POST_DIR1)]
+    posts1.sort(key=lambda item:item['date'], reverse=True)
+    return render_template('posts1.html', posts1 = posts1)
 
-@app.route("/posts/<name>/")
-def post(name):
-    path = '{}/{}'.format(POST_DIR, name)
-    post = flatpages.get_or_404(path)
-    return render_template('post.html', post=post)
+@app.route("/posts1/<name>/")
+def post1(name):
+    path = '{}/{}'.format(POST_DIR1, name)
+    post1 = flatpages.get_or_404(path)
+    return render_template('post1.html', post1 = post1)
+
+@app.route("/posts2/")
+def posts2():
+	posts2 = [p for p in flatpages if p.path.startswith(POST_DIR2)]
+	posts2.sort(key=lambda item:item['date'], reverse=True)
+	return render_template('posts2.html', posts2 = posts2)
+
+@app.route("/posts2/<name>/")
+def post2(name):
+	path = '{}/{}'.format(POST_DIR2, name)
+	post2 = flatpages.get_or_404(path)
+	return render_template('post2.html', post2 = post2)
+
+
+@app.route("/posts3/")
+def posts3():
+	posts3 = [p for p in flatpages if p.path.startswith(POST_DIR3)]
+	posts3.sort(key=lambda item:item['date'], reverse=True)
+	return render_template('posts3.html', posts3 = posts3)
+
+@app.route("/posts3/<name>/")
+def post3(name):
+	path = '{}/{}'.format(POST_DIR3, name)
+	post3 = flatpages.get_or_404(path)
+	return render_template('post3.html', post3 = post3)
+
 
 @app.route('/hobby')
 def hobby():
