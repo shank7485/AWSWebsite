@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="text-center">
+					<classyFontBody>
+					<h2>Blog Posts</h2>
+					</classyFontBody>
+        </div>
+
+					<span style="display:block; height: 15px;"></span>
+        <div align="center">
+            <classyFontBody>
+                <p>I write blog posts about tech and photography whenever I am free. Check out my posts below.</p>
+            </classyFontBody>
+        </div>
+        <div align="center">
+            <classyFontPost>
+
+						{% for post2 in posts2 %}
+                            <b>
+                                <a href="{{ url_for('post2', name=post2.path.replace('posts2/', '')) }}" style="color: black">
+                                    {{ post2.title }}
+                                </a>
+                            </b>
+                            <br>
+                            {{ post2.details }}
+                            <br>
+                            <small> Posted date: {{ post2.date }}</small>
+                            <br>
+                            <p></p>
+
+                        {% endfor %}
+
+             <div>
+                 <nav>
+                      <ul class="pagination" style="color: black">
+                        <li>
+                          <a href="/posts1" aria-label="Previous" style="color: black">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li><a href="/posts1" style="color: black">1</a></li>
+                        <li><a href="/posts2" style="color: black">2</a></li>
+                        <li>
+                            <a href="/posts2" aria-label="Next" style="color: black">
+                            <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                      </ul>
+                 </nav>
+             </div>
+
+            </classyFontPost></div>
+        </div>
+</div>
+
+{% endblock %}
