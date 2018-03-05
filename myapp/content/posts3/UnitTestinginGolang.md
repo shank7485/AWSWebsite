@@ -11,7 +11,7 @@ So far, I absolutely love Golang. If you are like me who likes C, Python and all
 The example I take here is about unit testing an API which internally has some CRUD operation with a data store. The idea is to test the expected values to be
 obtained from the API and mock out the backend data store interaction.
 
-**Disclaimer: All the examples below are from my newbie Golang development experience. It may not be the best practise followed. But I would like to share whatever I learnt. :-P **
+**Disclaimer: All the examples below are from my Golang development experience. It may not be the best practise followed. But I would like to share whatever I learnt. **
 
 The Golang packages I am using are **Gorrila Mux** for the API and handlers, **Consul** for the backend state storage, **testify** with the default testing package for testing.
 
