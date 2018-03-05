@@ -1,0 +1,44 @@
+{% extends "projects.html" %}
+
+{% block content1 %}
+				
+				<classyFontIndex>
+				<h3 id="s1">Software Defined Firewall:</h3>
+				<div align="left">
+					<b>Overview:</b>
+					<p>
+						This Project was done as a part of <b>Sofware Defined Networks</b> course at UTD during Spring 2015.
+					</p>
+					<p>
+						In this project, we show a proof of concept wherein a firewall is implemented which can take in user defined policies through a Textual User-Interface and also the firewall can prevent DDoS attacks in an event driven fashion.
+					</p>
+					
+					<b>Languages and Tools:</b>
+					<p>
+						<ul>
+							<li>POX Controller.</li>
+							<li>Pyretic SDN library</li>
+							<li>Mininet network Emulator</li>
+							<li>Open vSwitch</li>
+						</ul>
+					</p>
+					
+					<b>Working:</b>
+					<p>
+						<ul>
+							<li>
+								In this project, we as a team, implemented a Firewall Application on a Python based Pox Controller. The Firewall application is programmed using a modular programming language called Pyretic. Pyretic is basically a library in Python which gives a abstract wrapper over the low level OpenFlow functions. This enables us for easiler programming of the OpenFlow switch easily.
+							</li>
+							<li>
+								The firewall application keeps a list of IP to be blocked as given by the User. When a new flow is to be installed in the switch, the controller checks for in the list if the IP making thre request is in the blocked list. If present, the controller ignores the request. If not present, the controller programmes the flow in the switch. This also works when the destination IP is in the blocked list. Basically, the application looks for IP block pairs in the list. 
+							</li>
+							<li>	
+								Parallely, the application looks for consequtive ICMP ping packets moving between hosts. In our scenario, as POC, we used the ICMP packets to show Denial of Service. If a host sends more that a threshold number of ICMP packets to any host in the network, the application on the controller blocks this host (IP) and adds it to list of blocked IP. This is how DDoS prevention was implemented.
+							</li>
+							
+						</ul>
+						  
+					</p>
+				</div>
+				</classyFontIndex>
+{% endblock %}
