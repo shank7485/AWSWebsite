@@ -1,0 +1,65 @@
+{% extends "projects.html" %}
+
+{% block content1 %}
+
+<classyFontIndex>
+    <h3 id="s1">Auto Healing microservice to heal Virtual Network
+        Functions:</h3>
+    <div align="left">
+        <b>Overview:</b>
+        <p>
+            This project was done when I was an upstream contributor to the
+            <b>Virtual Function Controller</b> component of the <a
+                href="https://www.onap.org/" target="_blank"><b>Open
+            Network Automation Platform</b></a>
+            project.
+        </p>
+        <p>
+            The outcome of the project was to provide an <b>Auto Healing</b> endpoint in
+            the Virtual Function Controller to heal <b>Virtual Network Functions
+            (VNFs)</b> running inside VMs/containers.
+        </p>
+
+        <b>Languages and Tools:</b>
+        <p>
+        <ul>
+            <li>Python Django</li>
+            <li>Docker</li>
+        </ul>
+        </p>
+
+        <b>Working:</b>
+        <ul>
+            <li>
+                The Virtual Function Controller maintain a database for logical
+                mapping
+                between infrastructure resources (Virtual Machines
+                /Containers) with Virtual Functions running inside them.
+            </li>
+            <li>
+                Upon calling the auto healing endpoint to heal a specific
+                Virtual Network function, the Virtual Function Controller looks
+                up the database to find the corresponding infrastructure
+                resource which can be a VM or a container and restart it.
+            </li>
+            <li>
+                This way, the VNF running inside the instance restarts and the
+                virtual function is healed.
+            </li>
+            <li>
+                The endpoint is usually triggered by failure detection such as
+                Consul's service discovery feature wherein the VNFs endpoint is
+                specific in the service discovery and if the endpoint is not
+                responding back, a call to the Auto healing endpoint is done to
+                restart it.
+            </li>
+            <li>
+                Dockerfile for this endpoint was also written.
+            </li>
+        </ul>
+    </div>
+
+
+</classyFontIndex>
+
+{% endblock %}

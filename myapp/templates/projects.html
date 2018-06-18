@@ -4,30 +4,108 @@
 <span style="display:block; height: 50px;"></span>
 
 <div class="container">
-			<div class="jumbotron">
-				<div class="text-center">
-					<classyFontBody>
-						<h2>Projects</h2>
-					</classyFontBody>	
-				</div>
-<span style="display:block; height: 5%;"></span>
+    <div class="jumbotron">
+        <div class="text-center">
+            <classyFontBody>
+                <h2>Work related Projects:</h2>
+            </classyFontBody>
+        </div>
+        <span style="display:block; height: 5%;"></span>
 
-<ul class="nav nav-tabs nav-stacked">
-                    <li role="presentation" class="active"><a href="/projects_iot#s1"><div class="text-center"><classyFontIndex>Internet of Things: Home Surveillance</classyFontIndex></div></a></li>
-					<li role="presentation" class="active"><a href="/projects_awscloud#s1"><div class="text-center"><classyFontIndex>Streaming Media as a Cloud Service</classyFontIndex></div></a></li>
-					<li role="presentation" class="active"><a href="/projects_nfv#s1"><div class="text-center"><classyFontIndex>NFV Orchestration on OpenStack</classyFontIndex></div></a></li>
-					<li role="presentation" class="active"><a href="/projects_docker#s1"><div class="text-center"><classyFontIndex>Docker container as a Service</classyFontIndex></div></a></li>
-					<li role="presentation" class="active"><a href="/projects_sdn#s1"><div class="text-center"><classyFontIndex>Software Defined Firewall</classyFontIndex></div></a></li>
-					<li role="presentation" class="active"><a href="/projects_webpage#s1"><div class="text-center"><classyFontIndex>Python Flask Webpage on AWS</classyFontIndex></div></a></li>
-					<li role="presentation" class="active"><a href="/projects_heroku#s1"><div class="text-center"><classyFontIndex>APIs on Heroku Cloud Platform</classyFontIndex></div></a></li>
-					<!-- <li role="presentation" class="active"><a href="/projects_database#s1"><div class="text-center"><classyFontIndex>Design of 	Flea Market Database</classyFontIndex></div></a></li> -->
-					<!-- <li role="presentation" class="active"><a href="/projects_queue#s1"><div class="text-center"><classyFontIndex>Event Driven simulation of Networks</classyFontIndex></div></a></li> -->
-</ul>
+        <ul class="nav nav-tabs nav-stacked">
 
-<span style="display:block; height: 30px;"></span>
+            <li role="presentation" class="active"><a
+                    href="/projects_dkv#s1">
+                <div class="text-center">
+                    <classyFontIndex>
+                        Configuration Management of microservices using Consul
+                        Distributed Key Value store
+                    </classyFontIndex>
+                </div>
+            </a></li>
 
-{% block content1 %} {% endblock %}
+            <li role="presentation" class="active"><a
+                    href="/projects_autoheal#s1">
+                <div class="text-center">
+                    <classyFontIndex>
+                        Auto Healing micro service in Virtual Function
+                        Controller
+                    </classyFontIndex>
+                </div>
+            </a></li>
 
-{% endblock %}
-</div>
+            <li role="presentation" class="active"><a
+                    href="/projects_neutron#s1">
+                <div class="text-center">
+                    <classyFontIndex>
+                        Rolling Upgrades in OpenStack Neutron
+                    </classyFontIndex>
+                </div>
+            </a></li>
+
+            <li role="presentation" class="active"><a href="/projects_lb#s1">
+                <div class="text-center">
+                    <classyFontIndex>
+                        Creation of V2.0 REST API in Octavia open source Load
+                        Balancer
+                    </classyFontIndex>
+                </div>
+            </a></li>
+
+            <li role="presentation" class="active"><a href="/projects_nfv#s1">
+                <div class="text-center">
+                    <classyFontIndex>
+                        NFV Orchestration on OpenStack
+                    </classyFontIndex>
+                </div>
+            </a></li>
+
+        </ul>
+
+        <div class="jumbotron">
+            <div class="text-center">
+                <classyFontBody>
+                    <h2>Academic and Side Projects:</h2>
+                </classyFontBody>
+            </div>
+
+            <ul class="nav nav-tabs nav-stacked">
+                <li role="presentation" class="active"><a
+                        href="/projects_iot#s1">
+                    <div class="text-center">
+                        <classyFontIndex>Internet of Things: Home Surveillance
+                        </classyFontIndex>
+                    </div>
+                </a></li>
+                <li role="presentation" class="active"><a
+                        href="/projects_awscloud#s1">
+                    <div class="text-center">
+                        <classyFontIndex>Streaming Media as a Cloud Service
+                        </classyFontIndex>
+                    </div>
+                </a></li>
+                <li role="presentation" class="active"><a
+                        href="/projects_docker#s1">
+                    <div class="text-center">
+                        <classyFontIndex>Docker container as a Service
+                        </classyFontIndex>
+                    </div>
+                </a></li>
+                <li role="presentation" class="active"><a
+                        href="/projects_webpage#s1">
+                    <div class="text-center">
+                        <classyFontIndex>Python Flask Webpage on AWS
+                        </classyFontIndex>
+                    </div>
+                </a></li>
+                <!-- <li role="presentation" class="active"><a href="/projects_queue#s1"><div class="text-center"><classyFontIndex>Event Driven simulation of Networks</classyFontIndex></div></a></li> -->
+            </ul>
+
+            <span style="display:block; height: 5%;"></span>
+
+            {% block content1 %} {% endblock %}
+
+            {% endblock %}
+        </div>
+    </div>
 </div>

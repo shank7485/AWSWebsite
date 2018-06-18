@@ -1,0 +1,47 @@
+{% extends "projects.html" %}
+
+{% block content1 %}
+<classyFontIndex>
+    <h3 id="s1">Rolling upgrades in OpenStack Neutron.</h3>
+    <p>Neutron Docs:<a
+            href="https://docs.openstack.org/neutron/latest/contributor/internals/upgrade.html"
+            target="_blank">
+        https://docs.openstack.org/neutron/latest/contributor/internals/upgrade.html
+    </a>
+    </p>
+    <div align="left">
+        <b>Overview:</b>
+        <p>
+            This was done when I was an upstream contributor to <a
+                href="https://docs.openstack.org/neutron/latest/"
+                style="color: black" target="_blank">
+            <b>OpenStack Neutron</b></a> as a part of the Neutron upgrades team.
+        </p>
+
+        <p>
+            The effort in the community was mainly aimed at enabling rolling
+            upgrades in OpenStack Neutron by making using of
+            <a href="https://github.com/openstack/neutron/tree/master/neutron/objects"
+               style="color: black" target="_blank"><b>Oslo Versioned Objects
+                (OVOs)</b></a>
+            to achieve versioning on RPCs when there are mixed (n and n+1)
+            clients and servers in an OpenStack cloud system when undergoing
+            upgrades.
+        </p>
+
+        <p>
+            I was personally responsible for implementing and integrating
+            various OVOs into core Neutron codebase.
+        </p>
+
+        <b>Tech stack:</b>
+        <p>
+        <ul>
+            <li>OpenStack Neutron</li>
+            <li>Python</li>
+            <li>Oslo Versioned Objects from OpenStack Oslo Library</li>
+        </ul>
+        </p>
+    </div>
+</classyFontIndex>
+{% endblock %}

@@ -36,25 +36,25 @@ flatpages = FlatPages(app)
 app.config.from_object(__name__)
 
 
-
 @app.route('/index')
 def index():
     return render_template('index.html')
-
-
-@app.route('/academics')
-def academics():
-    return render_template('academics.html')
 
 
 @app.route('/resume')
 def resume():
     return render_template('resume.html')
 
+
 @app.route('/')
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+
+@app.route('/projects_dkv')
+def projects_dkv():
+    return render_template('projects_dkv.html')
 
 
 @app.route('/projects_iot')
@@ -72,14 +72,9 @@ def projects_docker():
     return render_template('projects_docker.html')
 
 
-@app.route('/projects_heroku')
+@app.route('/projects_autoheal')
 def projects_heroku():
-    return render_template('projects_heroku.html')
-
-
-@app.route('/projects_sdn')
-def projects_sdn():
-    return render_template('projects_sdn.html')
+    return render_template('projects_autoheal.html')
 
 
 @app.route('/projects_webpage')
@@ -87,9 +82,9 @@ def projects_webpage():
     return render_template('projects_webpage.html')
 
 
-@app.route('/projects_database')
+@app.route('/projects_neutron')
 def projects_database():
-    return render_template('projects_database.html')
+    return render_template('projects_neutron.html')
 
 
 @app.route('/projects_nfv')
@@ -97,9 +92,9 @@ def projects_nfv():
     return render_template('projects_nfv.html')
 
 
-@app.route('/projects_queue')
+@app.route('/projects_lb')
 def projects_queue():
-    return render_template('projects_queue.html')
+    return render_template('projects_lb.html')
 
 
 @app.route('/projects_view')
@@ -154,6 +149,7 @@ def post3(name):
 def hobby():
     return render_template('hobby.html')
 
+
 @app.route('/blog_redirect/')
 def blog_redirect():
     return redirect("http://shashankkumar.me/posts3/", code=302)
@@ -164,7 +160,8 @@ def contact():
     form = ContactForm(request.form)
     if request.method == 'POST':
         form.subject.data = 'Mail from AWS Website'
-        msg = Message(form.subject.data, sender='contact@shashankkumar.me', recipients=['shank4804@gmail.com'])
+        msg = Message(form.subject.data, sender='contact@shashankkumar.me',
+                      recipients=['shank4804@gmail.com'])
 
         name = form.name.data
         email = form.email.data

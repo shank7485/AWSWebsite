@@ -1,0 +1,80 @@
+{% extends "projects.html" %}
+
+{% block content1 %}
+
+<classyFontIndex>
+    <h3 id="s1">Configuration Management of microservices using Consul
+        Distributed KV Store:</h3>
+    <div align="left">
+        <b>Overview:</b>
+        <p>
+            This project was done when I was an upstream contributor to <a
+                href="https://www.onap.org/" target="_blank"><b>Open
+            Network Automation Platform</b></a>
+            project.
+        </p>
+        <p>
+            The main purpose of this system is to provide a scalable central
+            configuration management
+            to manage various configuration files of various microservices and
+            to push changes them
+            without having the microservices to undergo restart thereby helping
+            them scale well.
+        </p>
+
+        <p>
+            I am currently maintaining the project at: <a
+                href="https://git.onap.org/music/distributed-kv-store/tree/"
+                target="_blank">https://git.onap.org/music/distributed-kv-store/tree/</a>
+        </p>
+
+        <b>Languages and Tools:</b>
+        <p>
+        <ul>
+            <li>Go (Golang) 1.10</li>
+            <li>Gorilla Mux</li>
+            <li>Hashicorp Consul Distributed Key Value store</li>
+            <li>Docker</li>
+            <li>Kubernetes Helm</li>
+        </ul>
+        </p>
+
+        <b>Working:</b>
+        <p>
+        <div align="center">
+            <img src="/static/dkv.png">
+        </div>
+        <ul>
+            <li>
+                The admin of each microservice registers a microservice with the
+                service.
+                They get back a unique token which is used along with a key.
+            </li>
+            <li>
+                Using the token, the admin will upload a configuration files.
+                The configuration files typically have key values such as
+                "DP_IP=IP address" or "ImagePullPolicy=Always" etc.
+            </li>
+            <li>
+                On the microservices side, the client code will keep looking at
+                Consul for the "token+key" for key changes.
+                This is possible using Consul supported client such as Config4j
+                or Python Consul client.
+            </li>
+            <li>
+                When the config as loaded into Consul, those values are now
+                dynamically pushed to the microservices without having them to
+                undergo restarts as the microservices are constantly looking for
+                changes.
+            </li>
+
+            <li>
+                The whole application is packaged as Kubernetes Helm Charts to
+                be deployed on a Kubernetes Cluster.
+            </li>
+        </ul>
+
+        </p>
+    </div>
+</classyFontIndex>
+{% endblock %}

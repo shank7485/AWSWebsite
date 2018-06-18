@@ -26,7 +26,7 @@ body {
 
 @font-face {
     font-family: myFirstFont;
-    src: url(Cola.otf);
+    src: url(OpenSans-Regular.ttf);
 }
 
 customFont {
@@ -41,7 +41,7 @@ classyFontIndex{
 
 @font-face {
     font-family: ClassyFont;
-    src: url(Liberty.ttf);
+    src: url(OpenSans-Regular.ttf);
 }
 
 classyFontBody{

@@ -1,0 +1,58 @@
+{% extends "projects.html" %}
+
+{% block content1 %}
+
+<classyFontIndex>
+    <h3 id="s1">Creation of V2.0 REST API in Octavia open source Load
+        Balancer</h3>
+    <p>Octavia Overview Docs:<a
+            href="https://docs.openstack.org/neutron/latest/contributor/internals/upgrade.html"
+            target="_blank">
+        https://docs.openstack.org/octavia/latest/reference/introduction.html
+    </a>
+        <div align="left">
+            <b>Overview:</b>
+    <p>
+        This was done when I was an upstream contributor to <a
+            href="https://docs.openstack.org/octavia/latest/"
+            style="color: black" target="_blank">
+        <b>OpenStack Load Balancer Octavia</b></a> project.
+    </p>
+
+    <p>
+        The effort was mainly aimed at creating <b>V2.0 API endpoints</b> for
+        the load balancer. The V2.0 was created to split the longer endpoint to
+        smaller shorter ones so that clients will need lesser data to
+        manipulate the load balancer REST resources.
+    </p>
+    The example changed from <b>/v1/loadbalancer/'LB_ID'/pools
+    'POOL_ID'/member/'MEMBER_ID'</b> to a simpler <b>/v2/loadbalancer</b>, <b>/v2/pool</b>
+    etc. splitting the resources, making client calls simpler.
+    <p>
+
+    </p>
+
+    <p>
+        I was personally responsible for implementing the API
+        endpoint for CRUD
+        operations on a <b>Pool</b> resource where Pool in the load
+        balancer is
+        responsible for logically maintaining the number of member
+        <b>Virtual Machines</b> within which the traffic will be balanced based
+        on
+        the type of
+        algorithm specified.
+    </p>
+
+    <b>Languages and Tools:</b>
+    <p>
+    <ul>
+        <li>Python</li>
+        <li>Pecan Library</li>
+        <li>Apache HTTP</li>
+    </ul>
+    </p>
+
+    </div>
+</classyFontIndex>
+{% endblock %}
